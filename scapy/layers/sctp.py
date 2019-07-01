@@ -536,8 +536,8 @@ class SCTPChunkData(_SCTPChunkGuessPayload, Packet):
                    XShortField("stream_id", None),
                    XShortField("stream_seq", None),
                    IntEnumField("proto_id", None, SCTP_PAYLOAD_PROTOCOL_INDENTIFIERS),  # noqa: E501
-                   PadField(StrLenField("data", None, length_from=lambda pkt: pkt.len - 16),  # noqa: E501
-                            4, padwith=b"\x00"),
+                #    PadField(StrLenField("data", None, length_from=lambda pkt: pkt.len - 16),  # noqa: E501
+                #             4, padwith=b"\x00"),
                    ]
 
 
