@@ -378,7 +378,7 @@ class AVP_Generic (Packet):
         return s[:nbBytes], s[nbBytes:]
 
     def post_build(self, p, pay):
-        nbBytes = (-len(p)) % 4
+        nbBytes = (-len(p + pay)) % DIAMETER_BYTES_ALIGNMENT
         while nbBytes:
             p += struct.pack("B", 0)
             nbBytes -= 1
