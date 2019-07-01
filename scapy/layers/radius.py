@@ -273,7 +273,7 @@ class RadiusAttribute(Packet):
     def post_build(self, p, pay):
         length = self.len
         if length is None:
-            length = len(p)
+            length = len(p) + len(pay)
             p = p[:1] + struct.pack("!B", length) + p[2:]
         return p
 
