@@ -839,10 +839,14 @@ class GTPV2ModifyBearerRequest(GTPV2Command):
 class GTPV2ModifyBearerResponse(GTPV2Command):
     name = "GTPv2 Modify Bearer Response"
 
+class GTPV2CreateBearerRequest(GTPV2Command):
+    name = "GTPv2 Create Bearer Request"
+
+class GTPV2CreateBearerResponse(GTPV2Command):
+    name = "GTPv2 Create Bearer Response"
 
 class GTPV2UpdateBearerRequest(GTPV2Command):
     name = "GTPv2 Update Bearer Request"
-
 
 class GTPV2UpdateBearerResponse(GTPV2Command):
     name = "GTPv2 Update Bearer Response"
@@ -915,6 +919,8 @@ bind_layers(GTPHeader, GTPV2DeleteSessionResponse, gtp_type=37)
 bind_layers(GTPHeader, GTPV2ModifyBearerCommand, gtp_type=64)
 bind_layers(GTPHeader, GTPV2ModifyBearerFailureNotification, gtp_type=65)
 bind_layers(GTPHeader, GTPV2DownlinkDataNotifFailureIndication, gtp_type=70)
+bind_layers(GTPHeader, GTPV2CreateBearerRequest, gtp_type=95)
+bind_layers(GTPHeader, GTPV2CreateBearerRequest, gtp_type=96)
 bind_layers(GTPHeader, GTPV2UpdateBearerRequest, gtp_type=97)
 bind_layers(GTPHeader, GTPV2UpdateBearerResponse, gtp_type=98)
 bind_layers(GTPHeader, GTPV2DeleteBearerRequest, gtp_type=99)
