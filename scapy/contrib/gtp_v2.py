@@ -136,7 +136,8 @@ class IE_MEI(gtp.IE_Base):
                    ShortField("length", 0),
                    BitField("CR_flag", 0, 4),
                    BitField("instance", 0, 4),
-                   LongField("MEI", 0)]
+                   gtp.TBCDByteField("MEI", "336070809100000",
+                                     length_from=lambda x: x.length)]
 
 
 def IE_Dispatcher(s):
